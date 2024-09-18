@@ -26,7 +26,7 @@ let package = Package(
     .package(url: "https://github.com/pointfreeco/swift-clocks", from: "1.0.4"),
     .package(url: "https://github.com/pointfreeco/swift-concurrency-extras", from: "1.0.0"),
     .package(url: "https://github.com/pointfreeco/xctest-dynamic-overlay", from: "1.4.0"),
-    .package(url: "https://github.com/swiftlang/swift-syntax", "509.0.0"..<"601.0.0-prerelease"),
+    .package(url: "https://github.com/sjavora/swift-syntax-xcframeworks.git", "510.0.1"),
   ],
   targets: [
     .target(
@@ -64,8 +64,7 @@ let package = Package(
     .macro(
       name: "DependenciesMacrosPlugin",
       dependencies: [
-        .product(name: "SwiftSyntaxMacros", package: "swift-syntax"),
-        .product(name: "SwiftCompilerPlugin", package: "swift-syntax"),
+          .product(name: "SwiftSyntaxWrapper", package: "swift-syntax-xcframeworks"),
       ]
     ),
   ]
@@ -83,7 +82,7 @@ let package = Package(
 
 #if !os(WASI)
   package.dependencies.append(contentsOf: [
-    .package(url: "https://github.com/pointfreeco/swift-macro-testing", from: "0.2.0")
+    .package(url: "https://github.com/christianflanders/swift-macro-testing.git", branch: "main")
   ])
   package.targets.append(contentsOf: [
     .testTarget(
