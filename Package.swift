@@ -26,7 +26,7 @@ let package = Package(
     .package(url: "https://github.com/pointfreeco/swift-clocks", from: "1.0.4"),
     .package(url: "https://github.com/pointfreeco/swift-concurrency-extras", from: "1.0.0"),
     .package(url: "https://github.com/pointfreeco/xctest-dynamic-overlay", from: "1.4.0"),
-    .package(url: "https://github.com/sjavora/swift-syntax-xcframeworks.git", "510.0.1"),
+    .package(url: "https://github.com/sjavora/swift-syntax-xcframeworks.git", branch: "510.0.1"),
   ],
   targets: [
     .target(
